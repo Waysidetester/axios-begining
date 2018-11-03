@@ -3,12 +3,14 @@ import 'bootstrap';
 import './index.scss';
 import dogsData from './data/dogsData';
 import catsData from './data/catsData';
+import dogComponent from './components/dogComponent';
+import catComponent from './components/catComponent';
 
 $('#dogs').append('<p>I am linked</p>');
 
 dogsData.getDogs()
   .then((data) => {
-    console.log(data.data);
+    dogComponent.createDogCards(data.data.dogs);
   })
   .catch((error) => {
     console.error(error);
@@ -16,7 +18,7 @@ dogsData.getDogs()
 
 catsData.getCats()
   .then((data) => {
-    console.log(data.data);
+    catComponent.createCatCards(data.data.cats);
   })
   .catch((error) => {
     console.error(error);
