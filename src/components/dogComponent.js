@@ -1,4 +1,7 @@
 import $ from 'jquery';
+import dogPhoto from '../images/dogsrules.jpg';
+
+$('#dog-img').attr('src', dogPhoto);
 
 const createDogCards = (dogs) => {
   let newString = '';
